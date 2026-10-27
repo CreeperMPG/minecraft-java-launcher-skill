@@ -3,6 +3,12 @@
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [Unreleased]
+
+### 变更
+
+- `README.md` 新增「不含代码」说明：技能正文只有步骤、字段表与判定表，不提供参考实现，也不附带脚本。
+
 ## [1.0.0] - 2026-10-27
 
 ### 新增
