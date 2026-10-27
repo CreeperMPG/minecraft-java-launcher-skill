@@ -1,0 +1,63 @@
+# dsh-skill-minecraft-java-launcher
+
+一个 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 技能（Skill），讲清 **Minecraft Java 版启动器怎么实现**，以及**怎么给实例装模组**。
+
+给 Agent 用，也给人用：三份文档都是「步骤 + 字段表 + 判定表 + 检查清单」，照着执行即可从零做出下载、登录、启动、加模组四件事。
+
+## 内容
+
+| 文件 | 说明 |
+|---|---|
+| `SKILL.md` | 技能入口：先读哪份、五条不能做错的、版本与运行时对照、取数路径、常见误判、收工自检 |
+| `download.md` | 下载链路：版本清单 → 版本 JSON → 生成下载任务（jar / 库 / 资源 / 日志 / Java 运行时）→ 校验写盘 → 加载器元数据 → 检查清单 |
+| `launch.md` | 启动链路：参数求值（形态 / features / 占位符）→ classpath 与 natives → 启动步骤 → 正版与离线登录 → 加载器 → 进程与日志 → 错误对照 |
+| `mods.md` | 加模组：加载器类型匹配、Modrinth API 取数、CurseForge 网页（浏览器）取数与下载、落盘规则、错误对照 |
+
+## 安装
+
+技能目录必须落在 DSH 会扫描的位置，任选其一：
+
+| 范围 | 路径 |
+|---|---|
+| 当前项目 | `<项目>/.dsh/skills/` |
+| 当前项目（兼容） | `<项目>/.agents/skills/` |
+| 当前用户 | `~/.dsh/skills/` |
+| 当前用户（兼容） | `~/.agents/skills/` |
+
+克隆到用户级技能目录：
+
+```bash
+git clone https://github.com/CreeperMPG/dsh-skill-minecraft-java-launcher.git \
+  ~/.dsh/skills/minecraft-java-launcher
+```
+
+或下载 ZIP 后把解压出的目录放进上述任一位置，**目录名即技能名**（`minecraft-java-launcher`）。
+
+放置完成后无需重启：技能目录被监视，新增、改名、删除都会在下一步刷新到会话里。
+
+## 触发时机
+
+Agent 在下列情况会加载本技能：
+
+- 要写或改启动器的下载 / 启动链路；
+- 排查「文件都在却起不来」「缺库缺资源」「Java 版本不对」「离线账号日志 401」；
+- 往实例里加模组，需要判断 Fabric / Forge / NeoForge 类型、解析依赖、下载文件。
+
+## 依据与时效
+
+内容基于 2026-10 的实测与官方文档：
+
+- 游戏版本以 `26.3` 为基准（版本号已改为「年.序号」，26.x 需要 Java 25）；
+- 接口来自 `piston-meta.mojang.com`、`meta.fabricmc.net`、Modrinth API v2、CurseForge 网页；
+- 加载器元数据取自 Forge `1.20.1-47.4.28`、NeoForge `21.1.265` 与 `26.3.0.99` 安装器，Fabric loader `0.20.1`。
+
+Mojang 与模组平台的接口会变；文档里的判定表比具体数值更耐久，遇到对不上的地方先看判定逻辑再怀疑数值。
+
+## 免责声明
+
+本项目与 Mojang Studios、Microsoft、CurseForge、Modrinth 均无隶属或背书关系。
+文档仅描述公开接口的调用方式，不包含、不分发任何游戏本体或模组文件。
+
+## 许可
+
+[MIT](LICENSE)
