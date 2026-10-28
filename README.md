@@ -1,4 +1,4 @@
-# dsh-skill-minecraft-java-launcher
+# minecraft-java-launcher
 
 > [!IMPORTANT]
 > **本技能不含任何代码。** 正文全部是文字、表格与清单——没有参考实现、没有脚本、没有可执行文件。
@@ -30,7 +30,7 @@
 
 ## 安装
 
-技能目录必须落在 DSH 会扫描的位置，任选其一：
+技能目录必须落在工具会扫描的位置，任选其一：
 
 | 范围 | 路径 |
 |---|---|
@@ -42,7 +42,7 @@
 克隆到用户级技能目录：
 
 ```bash
-git clone https://github.com/CreeperMPG/dsh-skill-minecraft-java-launcher.git \
+git clone https://github.com/CreeperMPG/minecraft-java-launcher.git \
   ~/.dsh/skills/minecraft-java-launcher
 ```
 
@@ -53,7 +53,7 @@ git clone https://github.com/CreeperMPG/dsh-skill-minecraft-java-launcher.git \
 ## 兼容性
 
 正文格式遵循 **Agent Skills** 开放标准（`SKILL.md` + YAML frontmatter，必需字段只有 `name` 与 `description`），
-所以不绑死在 DSH 上：
+所以不绑定任何单一工具：
 
 | 使用者 | 放哪里 | 说明 |
 |---|---|---|
@@ -62,7 +62,8 @@ git clone https://github.com/CreeperMPG/dsh-skill-minecraft-java-launcher.git \
 | 只读 `AGENTS.md` 的 Agent | 仓库根目录的 `AGENTS.md` | 指向 `SKILL.md` 与三份文档 |
 | 人类 | 直接读 | 纯 Markdown，无依赖、无脚本 |
 
-`whenToUse` 是 DSH 的扩展字段，其它工具忽略即可；`license`、`metadata` 等可选字段同理。
+上表中的 `~/.dsh/skills/`、`~/.claude/skills/` 是各工具自己的目录名，属于文件系统路径，不是本仓库的命名。
+`whenToUse` 是 DeepSeek Harness 的扩展字段，其它工具忽略即可；`license`、`metadata` 等可选字段同理。
 
 ## 触发时机
 

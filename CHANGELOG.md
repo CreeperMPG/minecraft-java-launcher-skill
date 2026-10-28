@@ -8,10 +8,12 @@
 ### 新增
 
 - `AGENTS.md`：给只读 AGENTS.md、不认技能的 Agent 的入口，指向 `SKILL.md` 与三份文档，并复述硬性约束。
-- `README.md` 新增「兼容性」一节：DSH、Claude Code（Agent Skills 标准）、只读 AGENTS.md 的工具、人类各自的用法。
+- `README.md` 新增「兼容性」一节：DeepSeek Harness、Claude Code（Agent Skills 标准）、只读 AGENTS.md 的工具、人类各自的用法。
 
 ### 变更
 
+- 仓库更名为 `minecraft-java-launcher`（原名去掉 `dsh-` 前缀），README 标题、克隆地址同步更新。
+- `README.md` 正文去掉 `DSH` 缩写式表述；文档内保留的 `~/.dsh/skills/` 等是各工具自己的目录路径。
 - `SKILL.md` 的 `description` 补上触发条件：只读标准字段的工具（如 Claude Code）也能判断何时加载。
 - `SKILL.md` 增加 `license: MIT` 字段（Agent Skills 标准的可选字段）。
 
