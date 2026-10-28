@@ -3,21 +3,6 @@
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
-## [Unreleased]
-
-### 新增
-
-- `AGENTS.md`：给只读 AGENTS.md、不认技能的 Agent 的入口，指向 `SKILL.md` 与三份文档，并复述硬性约束。
-- `README.md` 新增「兼容性」一节：DeepSeek Harness、Claude Code（Agent Skills 标准）、只读 AGENTS.md 的工具、人类各自的用法。
-
-### 变更
-
-- 仓库更名为 `minecraft-java-launcher-skill`：去掉 `dsh-` 前缀并补 `-skill` 后缀，README 标题与克隆地址同步更新。
-- `README.md` 的描述由「DeepSeek Harness 技能」改为「Agent Skill」，不再把项目绑定到单一工具。
-- `README.md` 正文去掉 `DSH` 缩写式表述；文档内保留的 `~/.dsh/skills/` 等是各工具自己的目录路径。
-- `SKILL.md` 的 `description` 补上触发条件：只读标准字段的工具（如 Claude Code）也能判断何时加载。
-- `SKILL.md` 增加 `license: MIT` 字段（Agent Skills 标准的可选字段）。
-
 ## [1.0.0] - 2026-10-28
 
 ### 新增
@@ -28,7 +13,15 @@
 - `download.md`：下载链路实现文档——版本清单、版本 JSON、下载任务生成、校验与写盘、Java 运行时、加载器元数据、检查清单。
 - `launch.md`：启动链路实现文档——参数求值与占位符、classpath 与 natives、九步启动流程、微软账号登录、离线登录、加载器装配、进程与日志、错误对照。
 - `mods.md`：加模组实现文档——实例加载器判定、加载器类型匹配、Modrinth API 流程、CurseForge 网页（浏览器）流程、落盘规则、错误对照。
-- `README.md`：安装方式、内容清单、触发时机、依据与免责；标题下方以 `[!IMPORTANT]` 提示块标注两条硬性约束。
+- `README.md`：安装方式、内容清单、兼容性、触发时机、依据与免责；标题下方以 `[!IMPORTANT]` 提示块标注两条硬性约束。
+- `AGENTS.md`：给只读 AGENTS.md、不认技能的 Agent 的入口，指向 `SKILL.md` 与三份文档，并复述硬性约束。
+
+### 变更
+
+- 仓库定名 `minecraft-java-launcher-skill`，不再带工具前缀。
+- 项目描述为 **Agent Skill**，不绑定单一工具；格式遵循 Agent Skills 开放标准（必需字段只有 `name` 与 `description`）。
+- `SKILL.md` 的 `description` 写入了触发条件，只读标准字段的工具也能判断何时加载；新增 `license: MIT` 字段。
+- `README.md` 新增「兼容性」一节，列出各家工具的技能目录与用法；文档内出现的 `~/.dsh/skills/` 等属于各工具自身的路径。
 
 ### 说明
 
