@@ -50,6 +50,20 @@ git clone https://github.com/CreeperMPG/dsh-skill-minecraft-java-launcher.git \
 
 放置完成后无需重启：技能目录被监视，新增、改名、删除都会在下一步刷新到会话里。
 
+## 兼容性
+
+正文格式遵循 **Agent Skills** 开放标准（`SKILL.md` + YAML frontmatter，必需字段只有 `name` 与 `description`），
+所以不绑死在 DSH 上：
+
+| 使用者 | 放哪里 | 说明 |
+|---|---|---|
+| DeepSeek Harness | `~/.dsh/skills/`、`<项目>/.dsh/skills/`、`~/.agents/skills/`、`<项目>/.agents/skills/` | 额外使用 `whenToUse` 决定加载时机 |
+| Claude Code 及遵循 Agent Skills 的工具 | `~/.claude/skills/<name>/SKILL.md` 或 `<项目>/.claude/skills/` | 只读标准字段；触发条件已写进 `description` |
+| 只读 `AGENTS.md` 的 Agent | 仓库根目录的 `AGENTS.md` | 指向 `SKILL.md` 与三份文档 |
+| 人类 | 直接读 | 纯 Markdown，无依赖、无脚本 |
+
+`whenToUse` 是 DSH 的扩展字段，其它工具忽略即可；`license`、`metadata` 等可选字段同理。
+
 ## 触发时机
 
 Agent 在下列情况会加载本技能：

@@ -1,7 +1,8 @@
 ---
 name: minecraft-java-launcher
-description: 实现或维护 Minecraft Java 版启动器（下载、安装、登录、启动），以及给实例装模组（Modrinth API / CurseForge 网页，含加载器类型匹配）。附三份实现文档。本技能不含代码，且禁止寻找或调用其它启动器。
+description: 实现或维护 Minecraft Java 版启动器（下载、安装、登录、启动），以及给实例装模组（Modrinth API / CurseForge 网页，含加载器类型匹配）。当需要写或改启动器的下载/启动链路、排查"文件都在却起不来""缺库缺资源""Java 版本不对""离线账号日志 401"，或按 Fabric / Forge / NeoForge 类型给实例加模组时使用。附三份实现文档；本技能不含代码，且禁止寻找或调用其它启动器。
 whenToUse: 要写或改启动器的下载/启动链路、排查"文件都在却起不来""缺库缺资源""Java 版本不对""离线账号日志 401"，或往实例里加模组（Fabric / Forge / NeoForge 类型匹配、依赖、下载）时。
+license: MIT
 ---
 
 # Minecraft Java 版启动器与加模组

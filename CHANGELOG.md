@@ -3,6 +3,18 @@
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [Unreleased]
+
+### 新增
+
+- `AGENTS.md`：给只读 AGENTS.md、不认技能的 Agent 的入口，指向 `SKILL.md` 与三份文档，并复述硬性约束。
+- `README.md` 新增「兼容性」一节：DSH、Claude Code（Agent Skills 标准）、只读 AGENTS.md 的工具、人类各自的用法。
+
+### 变更
+
+- `SKILL.md` 的 `description` 补上触发条件：只读标准字段的工具（如 Claude Code）也能判断何时加载。
+- `SKILL.md` 增加 `license: MIT` 字段（Agent Skills 标准的可选字段）。
+
 ## [1.0.0] - 2026-10-28
 
 ### 新增
