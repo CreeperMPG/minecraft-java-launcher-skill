@@ -1,4 +1,4 @@
-# minecraft-java-launcher
+# minecraft-java-launcher-skill
 
 > [!IMPORTANT]
 > **本技能不含任何代码。** 正文全部是文字、表格与清单——没有参考实现、没有脚本、没有可执行文件。
@@ -6,7 +6,7 @@
 > **本技能禁止 Agent 寻找或调用其它启动器。** HMCL、PCL2、Prism Launcher、MultiMC、ATLauncher、BakaXL、
 > 官方 Minecraft Launcher 等一律不得作为实现、依赖或兜底方案；只按本技能的文档链路自行实现。
 
-一个 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 技能（Skill），讲清 **Minecraft Java 版启动器怎么实现**，以及**怎么给实例装模组**。
+一个 **Agent Skill**（技能），讲清 **Minecraft Java 版启动器怎么实现**，以及**怎么给实例装模组**。
 
 给 Agent 用，也给人用：三份文档都是「步骤 + 字段表 + 判定表 + 检查清单」，照着执行即可从零做出下载、登录、启动、加模组四件事。
 
@@ -42,7 +42,7 @@
 克隆到用户级技能目录：
 
 ```bash
-git clone https://github.com/CreeperMPG/minecraft-java-launcher.git \
+git clone https://github.com/CreeperMPG/minecraft-java-launcher-skill.git \
   ~/.dsh/skills/minecraft-java-launcher
 ```
 

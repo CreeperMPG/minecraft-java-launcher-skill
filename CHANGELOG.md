@@ -12,7 +12,8 @@
 
 ### 变更
 
-- 仓库更名为 `minecraft-java-launcher`（原名去掉 `dsh-` 前缀），README 标题、克隆地址同步更新。
+- 仓库更名为 `minecraft-java-launcher-skill`：去掉 `dsh-` 前缀并补 `-skill` 后缀，README 标题与克隆地址同步更新。
+- `README.md` 的描述由「DeepSeek Harness 技能」改为「Agent Skill」，不再把项目绑定到单一工具。
 - `README.md` 正文去掉 `DSH` 缩写式表述；文档内保留的 `~/.dsh/skills/` 等是各工具自己的目录路径。
 - `SKILL.md` 的 `description` 补上触发条件：只读标准字段的工具（如 Claude Code）也能判断何时加载。
 - `SKILL.md` 增加 `license: MIT` 字段（Agent Skills 标准的可选字段）。
